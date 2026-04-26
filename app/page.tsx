@@ -197,12 +197,12 @@ export default function Website() {
 
                 const form = e.currentTarget;
 
-                const formData = {
-                  name: form.name.value,
-                  email: form.email.value,
-                  phone: form.phone.value,
-                  service: form.service.value,
-                };
+              const formData = {
+              name: (form.elements.namedItem("name") as HTMLInputElement).value,
+              email: (form.elements.namedItem("email") as HTMLInputElement).value,
+              phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
+              service: (form.elements.namedItem("service") as HTMLSelectElement).value,
+              };
 
                 await fetch("/api/contact", {
                   method: "POST",
