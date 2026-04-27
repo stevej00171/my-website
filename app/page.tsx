@@ -15,7 +15,7 @@ export default function Page() {
 
   {/* IMAGE */}
   <Image
-    src="/banner1.png"  // 👈 change this to your actual file name
+    src="/finance.png"  // 👈 change this to your actual file name
     alt="Legal funding"
     width={600}
     height={400}
