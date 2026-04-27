@@ -102,21 +102,83 @@ export default function Page() {
   <h2 className="text-2xl font-semibold">Industries We Serve</h2>
 
   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
     {[
-      "Real Estate Investors",
-      "Construction Companies",
-      "Transportation & Logistics",
-      "Law Firms",
-      "Small & Medium Businesses",
-      "Individual Claimants",
-    ].map((item) => (
-      <div
-        key={item}
-        className="border p-4 rounded-lg shadow-sm bg-white"
+      {
+        title: "Real Estate Investors",
+        desc: "We provide access to private capital for acquisitions, bridge financing, and property improvements. Whether you’re closing quickly or stabilizing a project, our funding helps you move without delays.",
+        points: [
+          "Fast closings when banks cannot move in time",
+          "Flexible structures tailored to your deal",
+          "Funding for purchase, refinance, or renovation",
+        ],
+      },
+      {
+        title: "Construction Companies",
+        desc: "Construction projects require consistent cash flow. We help cover material costs, labor, and operational expenses so your projects stay on track and on schedule.",
+        points: [
+          "Working capital for ongoing projects",
+          "Support for payroll and materials",
+          "Flexible repayment structures",
+        ],
+      },
+      {
+        title: "Transportation & Logistics",
+        desc: "We support transportation companies with funding for fleet expansion, maintenance, and operational costs so you can keep your business moving.",
+        points: [
+          "Fleet expansion financing",
+          "Coverage for fuel and maintenance",
+          "Capital to scale operations quickly",
+        ],
+      },
+      {
+        title: "Law Firms",
+        desc: "We provide law firms with financing to manage case expenses and improve cash flow while waiting for settlements or contingency outcomes.",
+        points: [
+          "Case cost financing",
+          "Improved cash flow stability",
+          "Scale your practice with confidence",
+        ],
+      },
+      {
+        title: "Small & Medium Businesses",
+        desc: "When traditional financing is not available, we connect businesses with private capital solutions to support growth and stability.",
+        points: [
+          "Quick access to working capital",
+          "Flexible approval criteria",
+          "Funding for expansion or operations",
+        ],
+      },
+      {
+        title: "Individual Claimants",
+        desc: "We help individuals access a portion of their expected settlement early, reducing financial stress while their case progresses.",
+        points: [
+          "No upfront costs",
+          "Non-recourse in many cases",
+          "Fast and confidential approvals",
+        ],
+      },
+    ].map((item, index) => (
+      <details
+        key={index}
+        className="border p-5 rounded-lg shadow-sm bg-white cursor-pointer"
       >
-        {item}
-      </div>
+        <summary className="font-semibold text-lg">
+          {item.title}
+        </summary>
+
+        <p className="text-gray-700 mt-3">
+          {item.desc}
+        </p>
+
+        <ul className="list-disc pl-5 text-gray-700 mt-3 space-y-1">
+          {item.points.map((point, i) => (
+            <li key={i}>{point}</li>
+          ))}
+        </ul>
+      </details>
     ))}
+
   </div>
 </section>
 
