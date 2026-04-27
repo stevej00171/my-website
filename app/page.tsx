@@ -244,6 +244,41 @@ export default function Page() {
         </ul>
       </section>
 
+    {/* HOW IT WORKS */}
+<section className="space-y-6">
+  <h2 className="text-2xl font-semibold text-center">
+    How It Works
+  </h2>
+
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+
+    <div className="border p-6 rounded-lg shadow-sm bg-white">
+      <div className="text-3xl font-bold mb-2">1</div>
+      <h3 className="font-semibold text-lg">Submit Your Request</h3>
+      <p className="text-gray-700 mt-2">
+        Complete our simple form with your details and funding needs. The process takes only a few minutes.
+      </p>
+    </div>
+
+    <div className="border p-6 rounded-lg shadow-sm bg-white">
+      <div className="text-3xl font-bold mb-2">2</div>
+      <h3 className="font-semibold text-lg">We Review Your Case</h3>
+      <p className="text-gray-700 mt-2">
+        Our team evaluates your case or business opportunity and structures a funding solution tailored to your needs.
+      </p>
+    </div>
+
+    <div className="border p-6 rounded-lg shadow-sm bg-white">
+      <div className="text-3xl font-bold mb-2">3</div>
+      <h3 className="font-semibold text-lg">Receive Your Funding</h3>
+      <p className="text-gray-700 mt-2">
+        Once approved, funds are released quickly so you can move forward without financial delay.
+      </p>
+    </div>
+
+   </div>
+   </section>
+
       {/* CTA */}
       <a
       href="#contact"
