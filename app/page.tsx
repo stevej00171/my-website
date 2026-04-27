@@ -56,30 +56,77 @@ export default function Page() {
       </section>
 
       {/* SERVICES */}
-      <section id="services" className="space-y-6">
-        <h2 className="text-2xl font-semibold">Our Services</h2>
+<section id="services" className="space-y-6">
+  <h2 className="text-2xl font-semibold">Our Services</h2>
 
-        <div>
-          <h3 className="font-bold">Settlement Advances</h3>
-          <p className="text-gray-700">
-            Receive funding based on your pending legal claim. Use the funds for living expenses, medical bills, or any immediate financial needs while your case progresses.
-          </p>
-        </div>
+  <div className="space-y-6">
 
-        <div>
-          <h3 className="font-bold">Lawsuit Funding</h3>
-          <p className="text-gray-700">
-            We provide financing for ongoing legal cases, helping reduce financial pressure so you can focus on your recovery and legal outcome.
-          </p>
-        </div>
+    <details className="border p-5 rounded-lg shadow-sm bg-white cursor-pointer">
+      <summary className="font-semibold text-lg">
+        Settlement Advances
+      </summary>
 
-        <div>
-          <h3 className="font-bold">Law Firm Financing</h3>
-          <p className="text-gray-700">
-            Flexible capital solutions for law firms to manage case expenses, improve cash flow, and scale operations efficiently.
-          </p>
-        </div>
-      </section>
+      <p className="text-gray-700 mt-3">
+        We provide plaintiffs with early access to a portion of their expected settlement, helping cover living expenses, medical bills, and financial obligations while their case progresses.
+      </p>
+
+      <ul className="list-disc pl-5 text-gray-700 mt-3 space-y-1">
+        <li>No upfront fees</li>
+        <li>Non-recourse in many cases</li>
+        <li>Fast approvals and funding</li>
+      </ul>
+    </details>
+
+    <details className="border p-5 rounded-lg shadow-sm bg-white cursor-pointer">
+      <summary className="font-semibold text-lg">
+        Lawsuit Funding
+      </summary>
+
+      <p className="text-gray-700 mt-3">
+        We offer funding solutions for ongoing legal cases, helping reduce financial pressure so clients can focus on their recovery and legal outcomes without settling early due to financial stress.
+      </p>
+
+      <ul className="list-disc pl-5 text-gray-700 mt-3 space-y-1">
+        <li>Support throughout the duration of your case</li>
+        <li>Flexible funding structures</li>
+        <li>Confidential and fast process</li>
+      </ul>
+    </details>
+
+    <details className="border p-5 rounded-lg shadow-sm bg-white cursor-pointer">
+      <summary className="font-semibold text-lg">
+        Law Firm Financing
+      </summary>
+
+      <p className="text-gray-700 mt-3">
+        We help law firms manage cash flow and finance case-related expenses, allowing them to take on more cases and operate efficiently without financial constraints.
+      </p>
+
+      <ul className="list-disc pl-5 text-gray-700 mt-3 space-y-1">
+        <li>Case cost financing</li>
+        <li>Improved operational cash flow</li>
+        <li>Scale your practice with confidence</li>
+      </ul>
+    </details>
+
+    <details className="border p-5 rounded-lg shadow-sm bg-white cursor-pointer">
+      <summary className="font-semibold text-lg">
+        Business & Loan Funding
+      </summary>
+
+      <p className="text-gray-700 mt-3">
+        Through our network of private lenders, we provide funding solutions for businesses that may not qualify for traditional bank financing, including real estate, construction, and transportation sectors.
+      </p>
+
+      <ul className="list-disc pl-5 text-gray-700 mt-3 space-y-1">
+        <li>Access to private capital</li>
+        <li>Fast approvals and flexible terms</li>
+        <li>Funding from $50K to $100M</li>
+      </ul>
+    </details>
+
+  </div>
+</section>
 
      {/* CASE TYPES */}
       <section className="space-y-6">
