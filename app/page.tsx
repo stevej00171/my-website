@@ -2,7 +2,8 @@ import Image from "next/image";
 
 export default function Page() {
   return (
-    <main className="relative p-6 max-w-6xl mx-auto space-y-16 min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-100 overflow-hidden">
+    <main className="relative p-6 max-w-6xl mx-auto space-y-16 min-h-screen overflow-hidden
+    bg-[linear-gradient(to_right,#e6f4f3_0%,#ffffff_12%,#ffffff_88%,#e6f4f3_100%)]">
 
       {/* BACKGROUND GLOW */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-teal-100 opacity-30 blur-3xl rounded-full pointer-events-none"></div>
@@ -110,7 +111,7 @@ export default function Page() {
         <div className="text-sm text-gray-500">— Client, Toronto</div>
       </section>
 
-      {/* GOOGLE MAP (REAL TRUST BOOST) */}
+      {/* MAP */}
       <section className="space-y-4">
         <h2 className="text-xl font-semibold text-center text-gray-900">
           Our Office
