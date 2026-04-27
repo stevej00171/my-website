@@ -81,6 +81,45 @@ export default function Page() {
         </div>
       </section>
 
+     {/* CASE TYPES */}
+      <section className="space-y-6">
+  <h2 className="text-2xl font-semibold">Case Types We Fund</h2>
+
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-700">
+    <div>• Personal Injury</div>
+    <div>• Motor Vehicle Accidents</div>
+    <div>• Medical Malpractice</div>
+    <div>• Slip and Fall Claims</div>
+    <div>• Wrongful Death</div>
+    <div>• Employment Disputes</div>
+    <div>• Class Action Lawsuits</div>
+    <div>• Other Civil Litigation</div>
+  </div>
+</section>
+
+{/* INDUSTRIES */}
+<section className="space-y-6">
+  <h2 className="text-2xl font-semibold">Industries We Serve</h2>
+
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {[
+      "Real Estate Investors",
+      "Construction Companies",
+      "Transportation & Logistics",
+      "Law Firms",
+      "Small & Medium Businesses",
+      "Individual Claimants",
+    ].map((item) => (
+      <div
+        key={item}
+        className="border p-4 rounded-lg shadow-sm bg-white"
+      >
+        {item}
+      </div>
+    ))}
+  </div>
+</section>
+
       {/* WHY CHOOSE US */}
       <section className="space-y-4">
         <h2 className="text-2xl font-semibold">
