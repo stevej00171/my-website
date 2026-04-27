@@ -136,17 +136,12 @@ export default function Page() {
       </section>
 
       {/* CTA */}
-      <section id="contact" className="text-center space-y-4">
-        <h2 className="text-2xl font-semibold">
-          Apply for Funding Today
-        </h2>
-        <p className="text-gray-700">
-          Tell us about your case and funding needs. Our team will review your request and respond promptly. All inquiries are handled with strict confidentiality.
-        </p>
-        <button className="bg-black text-white px-6 py-3 rounded">
-          Apply for funding
-        </button>
-      </section>
+      <a
+      href="#contact"
+      className="bg-black text-white px-8 py-4 rounded-lg inline-block font-semibold hover:bg-gray-800 transition"
+>
+      Apply for Funding
+      </a>
 
       {/* BUSINESS FINANCING */}
       <section className="space-y-4">
