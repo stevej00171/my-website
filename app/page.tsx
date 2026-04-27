@@ -4,7 +4,16 @@ export default function Page() {
     <main className="p-6 max-w-5xl mx-auto space-y-16">
 
       {/* HERO */}
-    <section className="text-center space-y-6">
+    <section className="text-center space-y-6 py-16 bg-gradient-to-b from-gray-50 to-white rounded-lg">
+
+  <Image
+    src="/badges.png"
+    alt="Awards and recognition"
+    width={420}
+    height={130}
+    className="mx-auto object-contain"
+  />
+
   <h1 className="text-4xl font-bold">
     Canada’s Leading Litigation Funding Solutions
   </h1>
@@ -13,21 +22,13 @@ export default function Page() {
     We provide fast, confidential settlement advances to individuals awaiting legal settlements—helping you access the funds you need today, without waiting months or years.
   </p>
 
-  {/* IMAGE */}
-  <Image
-  src="/finance.png"
-  alt="Legal funding"
-  width={600}
-  height={400}
-className="mx-auto rounded opacity-80 object-contain max-w-[220px]"
-/>
-
   <a
     href="#contact"
     className="bg-black text-white px-6 py-3 rounded inline-block"
   >
     Apply for Funding
   </a>
+
 </section>
 
       {/* WHAT WE DO */}
