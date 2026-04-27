@@ -20,7 +20,7 @@ export default function Page() {
   alt="Legal funding"
   width={600}
   height={400}
-className="mx-auto rounded opacity-80 object-contain max-w-[100px]"
+className="mx-auto rounded opacity-80 object-contain max-w-[120px]"
 />
 
   <a
