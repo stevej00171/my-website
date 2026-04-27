@@ -1,10 +1,28 @@
 import { Resend } from "resend";
+import { createClient } from "@supabase/supabase-js";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.SUPABASE_ANON_KEY!
+);
+import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
   try {
     const { name, email, phone, service } = await req.json();
+    await supabase.from("leads").insert([
+  {
+    name,
+    email,
+    phone,
+    service,
+  },
+]);
+    
 
     const result = await resend.emails.send({
       from: "onboarding@resend.dev",
