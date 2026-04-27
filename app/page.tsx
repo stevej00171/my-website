@@ -171,3 +171,24 @@ export default function Page() {
     </main>
   );
 }
+
+<footer className="border-t pt-8 text-sm text-gray-600 space-y-4">
+
+  <div className="font-semibold text-black">
+    SteveLaw Investments
+  </div>
+
+  <p>
+    Providing fast, confidential funding solutions across Canada for individuals, law firms, and businesses.
+  </p>
+
+  <div className="flex flex-wrap gap-4">
+    <a href="/privacy" className="hover:underline">Privacy Policy</a>
+    <a href="/terms" className="hover:underline">Terms of Service</a>
+  </div>
+
+  <p className="text-xs text-gray-500">
+    © {new Date().getFullYear()} SteveLaw Investments. All rights reserved.
+  </p>
+
+</footer>
