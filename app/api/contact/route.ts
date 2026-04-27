@@ -10,7 +10,12 @@ const supabase = createClient(
 
 export async function POST(req: Request) {
   try {
-    const { name, email, phone, service } = await req.json();
+    const formData = await req.formData();
+
+const name = formData.get("name") as string;
+const email = formData.get("email") as string;
+const phone = formData.get("phone") as string;
+const service = formData.get("service") as string;
 
     // Save to Supabase (optional, will work if configured)
     await supabase.from("leads").insert([
