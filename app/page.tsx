@@ -15,7 +15,6 @@ export default function Page() {
 
   {/* IMAGE */}
   <Image
-    <Image
   src="/finance.png"
   alt="Legal funding"
   width={600}
