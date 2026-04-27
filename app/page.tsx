@@ -162,17 +162,14 @@ export default function Page() {
       </section>
 
       {/* DISCLAIMER */}
-      <section className="text-sm text-gray-500 border-t pt-6">
-        <p>
-          SteveLaw Investments is not a law firm and does not provide legal advice. All funding is subject to review and approval. Terms and conditions apply.
-        </p>
-      </section>
+<section className="text-sm text-gray-500 border-t pt-6">
+  <p>
+    SteveLaw Investments is not a law firm and does not provide legal advice. All funding is subject to review and approval. Terms and conditions apply.
+  </p>
+</section>
 
-    </main>
-  );
-}
-
-<footer className="border-t pt-8 text-sm text-gray-600 space-y-4">
+{/* FOOTER */}
+<footer className="border-t pt-8 mt-12 text-sm text-gray-600 space-y-4">
 
   <div className="font-semibold text-black">
     SteveLaw Investments
@@ -182,7 +179,6 @@ export default function Page() {
     Providing fast, confidential funding solutions across Canada for individuals, law firms, and businesses.
   </p>
 
-  {/* CONTACT INFO */}
   <div className="space-y-1">
     <div>Phone: <a href="tel:14162220000" className="hover:underline">1-416-222-0000</a></div>
     <div>Email: <a href="mailto:stevej00171@gmail.com" className="hover:underline">stevej00171@gmail.com</a></div>
@@ -191,7 +187,6 @@ export default function Page() {
     </div>
   </div>
 
-  {/* LEGAL LINKS */}
   <div className="flex flex-wrap gap-4">
     <a href="/privacy" className="hover:underline">Privacy Policy</a>
     <a href="/terms" className="hover:underline">Terms of Service</a>
@@ -202,3 +197,5 @@ export default function Page() {
   </p>
 
 </footer>
+
+</main>
