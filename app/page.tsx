@@ -15,12 +15,13 @@ export default function Page() {
 
   {/* IMAGE */}
   <Image
-    src="/finance.png"  // 👈 change this to your actual file name
-    alt="Legal funding"
-    width={600}
-    height={400}
-    className="mx-auto rounded shadow"
-  />
+    <Image
+  src="/finance.png"
+  alt="Legal funding"
+  width={600}
+  height={400}
+  className="mx-auto rounded opacity-80 max-w-sm object-contain"
+/>
 
   <a
     href="#contact"
