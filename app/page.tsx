@@ -32,7 +32,7 @@ export default function Page() {
   <p className="text-lg text-gray-600">
     We provide fast, confidential settlement advances to individuals awaiting legal settlements—helping you access the funds you need today, without waiting months or years.
   </p>
-
+   
  <a
   href="#contact"
   className="bg-black text-white px-6 py-3 rounded inline-block"
@@ -155,6 +155,62 @@ export default function Page() {
           Funding is structured through our network of experienced private lenders.
         </p>
       </section>
+     
+     {/* CONTACT */}
+<section id="contact" className="space-y-6">
+  <h2 className="text-2xl font-semibold text-center">
+    Apply for Funding
+  </h2>
+
+  <form
+    action="/api/contact"
+    method="POST"
+    className="max-w-xl mx-auto space-y-4"
+  >
+    <input
+      type="text"
+      name="name"
+      placeholder="Full Name"
+      required
+      className="w-full border p-3 rounded"
+    />
+
+    <input
+      type="email"
+      name="email"
+      placeholder="Email Address"
+      required
+      className="w-full border p-3 rounded"
+    />
+
+    <input
+      type="tel"
+      name="phone"
+      placeholder="Phone Number"
+      required
+      className="w-full border p-3 rounded"
+    />
+
+    <select
+      name="service"
+      required
+      className="w-full border p-3 rounded"
+    >
+      <option value="">Select Service</option>
+      <option>Settlement Advance</option>
+      <option>Lawsuit Funding</option>
+      <option>Law Firm Financing</option>
+      <option>Business / Loan Funding</option>
+    </select>
+
+    <button
+      type="submit"
+      className="bg-black text-white px-6 py-3 rounded w-full"
+    >
+      Submit Request
+    </button>
+  </form>
+</section>
 
       {/* DISCLAIMER */}
 <section className="text-sm text-gray-500 border-t pt-6">
