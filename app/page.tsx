@@ -1,19 +1,34 @@
+import Image from "next/image";
 export default function Page() {
   return (
     <main className="p-6 max-w-5xl mx-auto space-y-16">
 
       {/* HERO */}
-      <section className="text-center space-y-4">
-        <h1 className="text-4xl font-bold">
-          Canada’s Leading Litigation Funding Solutions
-        </h1>
-        <p className="text-lg text-gray-600">
-          We provide fast, confidential settlement advances to individuals awaiting legal settlements—helping you access the funds you need today, without waiting months or years.
-        </p>
-        <button className="bg-black text-white px-6 py-3 rounded">
-          Apply for Funding
-        </button>
-      </section>
+    <section className="text-center space-y-6">
+  <h1 className="text-4xl font-bold">
+    Canada’s Leading Litigation Funding Solutions
+  </h1>
+
+  <p className="text-lg text-gray-600">
+    We provide fast, confidential settlement advances to individuals awaiting legal settlements—helping you access the funds you need today, without waiting months or years.
+  </p>
+
+  {/* IMAGE */}
+  <Image
+    src="/banner1.png"  // 👈 change this to your actual file name
+    alt="Legal funding"
+    width={600}
+    height={400}
+    className="mx-auto rounded shadow"
+  />
+
+  <a
+    href="#contact"
+    className="bg-black text-white px-6 py-3 rounded inline-block"
+  >
+    Apply for Funding
+  </a>
+</section>
 
       {/* WHAT WE DO */}
       <section className="space-y-4">
