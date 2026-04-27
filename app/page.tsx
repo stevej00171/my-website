@@ -3,6 +3,17 @@ export default function Page() {
   return (
     <main className="p-6 max-w-5xl mx-auto space-y-16">
 
+   <nav className="flex justify-between items-center py-4 border-b mb-8">
+  <div className="font-bold text-lg">
+    SteveLaw Investments
+  </div>
+
+  <div className="space-x-6 text-sm">
+    <a href="#services" className="hover:underline">Services</a>
+    <a href="#contact" className="hover:underline">Contact</a>
+  </div>
+</nav>
+
       {/* HERO */}
     <section className="text-center space-y-6 py-16 bg-gradient-to-b from-gray-50 to-white rounded-lg">
 
@@ -45,7 +56,7 @@ export default function Page() {
       </section>
 
       {/* SERVICES */}
-      <section className="space-y-6">
+      <section id="services" className="space-y-6">
         <h2 className="text-2xl font-semibold">Our Services</h2>
 
         <div>
@@ -86,7 +97,7 @@ export default function Page() {
       </section>
 
       {/* CTA */}
-      <section className="text-center space-y-4">
+      <section id="contact" className="text-center space-y-4">
         <h2 className="text-2xl font-semibold">
           Apply for Funding Today
         </h2>
