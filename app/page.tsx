@@ -3,7 +3,7 @@ export default function Page() {
   return (
     <main className="p-6 max-w-5xl mx-auto space-y-16">
 
-   <nav className="flex justify-between items-center py-4 border-b mb-8">
+  <nav className="sticky top-0 bg-white z-50 flex justify-between items-center py-4 border-b mb-8">
   <div className="font-bold text-lg">
     SteveLaw Investments
   </div>
