@@ -37,7 +37,7 @@ export default function Page() {
   href="#contact"
   className="bg-black text-white px-6 py-3 rounded inline-block"
 >
-  Request a Funding Review
+  Apply for Funding 
 </a>
 
 </section>
@@ -105,7 +105,7 @@ export default function Page() {
           Tell us about your case and funding needs. Our team will review your request and respond promptly. All inquiries are handled with strict confidentiality.
         </p>
         <button className="bg-black text-white px-6 py-3 rounded">
-          Request a Funding Review
+          Apply for funding
         </button>
       </section>
 
