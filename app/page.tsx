@@ -182,6 +182,16 @@ export default function Page() {
     Providing fast, confidential funding solutions across Canada for individuals, law firms, and businesses.
   </p>
 
+  {/* CONTACT INFO */}
+  <div className="space-y-1">
+    <div>Phone: <a href="tel:14162220000" className="hover:underline">1-416-222-0000</a></div>
+    <div>Email: <a href="mailto:stevej00171@gmail.com" className="hover:underline">stevej00171@gmail.com</a></div>
+    <div>
+      First Canadian Place, 100 King St W #5600, Toronto, ON M5X 1C9
+    </div>
+  </div>
+
+  {/* LEGAL LINKS */}
   <div className="flex flex-wrap gap-4">
     <a href="/privacy" className="hover:underline">Privacy Policy</a>
     <a href="/terms" className="hover:underline">Terms of Service</a>
