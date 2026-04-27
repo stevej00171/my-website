@@ -33,12 +33,12 @@ export default function Page() {
     We provide fast, confidential settlement advances to individuals awaiting legal settlements—helping you access the funds you need today, without waiting months or years.
   </p>
 
-  <a
-    href="#contact"
-    className="bg-black text-white px-6 py-3 rounded inline-block"
-  >
-    Apply for Funding
-  </a>
+ <a
+  href="#contact"
+  className="bg-black text-white px-6 py-3 rounded inline-block"
+>
+  Request a Funding Review
+</a>
 
 </section>
 
