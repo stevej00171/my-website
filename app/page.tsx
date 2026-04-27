@@ -1,6 +1,38 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Page() {
+  const [status, setStatus] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        form.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+
+    setLoading(false);
+  };
+
   return (
     <main className="relative p-6 max-w-6xl mx-auto space-y-16 min-h-screen overflow-hidden
     bg-[linear-gradient(to_right,#e6f4f3_0%,#ffffff_12%,#ffffff_88%,#e6f4f3_100%)]">
@@ -31,7 +63,6 @@ export default function Page() {
           Fast, confidential settlement funding—so you don’t have to wait months or years.
         </p>
 
-        {/* TRUST BAR */}
         <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-600">
           <span>✔ No Win, No Repayment</span>
           <span>✔ Fast Approval</span>
@@ -45,19 +76,8 @@ export default function Page() {
           Apply for Funding
         </a>
 
-        {/* STAR RATING */}
         <div className="text-yellow-500 text-lg">★★★★★</div>
         <div className="text-sm text-gray-500">Trusted by clients across Canada</div>
-      </section>
-
-      {/* WHAT WE DO */}
-      <section className="space-y-4 bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-        <h2 className="text-2xl font-semibold text-gray-900">
-          Access Your Settlement Before Your Case Ends
-        </h2>
-        <p className="text-gray-700">
-          Legal cases can take time—but your financial needs cannot wait. We provide early access to your expected settlement.
-        </p>
       </section>
 
       {/* SERVICES */}
@@ -84,68 +104,13 @@ export default function Page() {
         </div>
       </section>
 
-      {/* HOW IT WORKS */}
-      <section className="space-y-6">
-        <h2 className="text-2xl font-semibold text-center text-gray-900">
-          How It Works
-        </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-          {["Submit", "Review", "Fund"].map((step, i) => (
-            <div
-              key={i}
-              className="border border-gray-200 p-6 rounded-xl shadow-sm bg-white transition hover:shadow-md hover:-translate-y-1"
-            >
-              <div className="text-3xl font-bold text-teal-600 mb-2">{i + 1}</div>
-              <h3 className="font-semibold text-lg">{step}</h3>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* TESTIMONIAL */}
-      <section className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center space-y-4">
-        <p className="text-gray-700 italic max-w-2xl mx-auto">
-          “SteveLaw helped me cover my expenses while waiting for my case to settle. The process was simple and fast.”
-        </p>
-        <div className="text-sm text-gray-500">— Client, Toronto</div>
-      </section>
-
-      {/* MAP */}
-      <section className="space-y-4">
-        <h2 className="text-xl font-semibold text-center text-gray-900">
-          Our Office
-        </h2>
-
-        <div className="w-full h-[300px] rounded-xl overflow-hidden border">
-          <iframe
-            src="https://www.google.com/maps?q=First+Canadian+Place+Toronto&output=embed"
-            className="w-full h-full border-0"
-            loading="lazy"
-          ></iframe>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <div className="text-center space-y-2">
-        <a
-          href="#contact"
-          className="bg-teal-600 text-white px-8 py-4 rounded-lg inline-block font-semibold transition-all duration-200 hover:bg-teal-700 hover:-translate-y-0.5 active:scale-95"
-        >
-          Apply for Funding
-        </a>
-        <p className="text-sm text-gray-500">
-          No obligation. Free review within 24 hours.
-        </p>
-      </div>
-
       {/* CONTACT */}
       <section id="contact" className="space-y-6 bg-white p-6 rounded-xl shadow-sm border border-gray-100">
         <h2 className="text-2xl font-semibold text-center text-gray-900">
           Apply for Funding
         </h2>
 
-        <form action="/api/contact" method="POST" className="max-w-xl mx-auto space-y-4">
+        <form onSubmit={handleSubmit} className="max-w-xl mx-auto space-y-4">
           <input type="text" name="name" placeholder="Full Name" required className="w-full border border-gray-200 p-3 rounded-lg" />
           <input type="email" name="email" placeholder="Email Address" required className="w-full border border-gray-200 p-3 rounded-lg" />
           <input type="tel" name="phone" placeholder="Phone Number" required className="w-full border border-gray-200 p-3 rounded-lg" />
@@ -160,10 +125,23 @@ export default function Page() {
 
           <button
             type="submit"
-            className="bg-teal-600 text-white px-6 py-3 rounded-lg w-full transition-all duration-200 hover:bg-teal-700 hover:-translate-y-0.5 active:scale-95"
+            disabled={loading}
+            className="bg-teal-600 text-white px-6 py-3 rounded-lg w-full transition-all duration-200 hover:bg-teal-700 hover:-translate-y-0.5 active:scale-95 disabled:opacity-50"
           >
-            Submit Request
+            {loading ? "Submitting..." : "Submit Request"}
           </button>
+
+          {status === "success" && (
+            <p className="text-green-600 text-sm text-center">
+              ✅ Your request has been submitted. We’ll get back to you shortly.
+            </p>
+          )}
+
+          {status === "error" && (
+            <p className="text-red-600 text-sm text-center">
+              ❌ Something went wrong. Please try again.
+            </p>
+          )}
         </form>
       </section>
 
