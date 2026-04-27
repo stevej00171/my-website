@@ -19,6 +19,17 @@ export async function POST(req: Request) {
       `,
     });
 
+    await resend.emails.send({
+  from: "onboarding@resend.dev",
+  to: email,
+  subject: "We received your request",
+  html: `
+    <p>Hi ${name},</p>
+    <p>Thanks for reaching out. We’ll contact you shortly.</p>
+    <p>- SteveLaw Investments</p>
+  `,
+});
+
     console.log("EMAIL SENT:", result);
 
     return new Response(JSON.stringify({ success: true }), {
