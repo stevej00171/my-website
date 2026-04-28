@@ -59,11 +59,9 @@ export default function Page() {
         <section className="text-center space-y-6 py-16 bg-white rounded-xl shadow-sm border border-gray-100">
 
           {/* NEW TOP LINE */}
-          <p className="text-sm md:text-base font-bold text-black !text-black max-w-3xl mx-auto">
-          For Individuals: Settlement Advances for Personal Injury Plaintiffs and Estates Funding Solutions for Beneficiaries, Executors and Trustees.
-          </p>
-            For Individuals: Settlement Advances for Personal Injury Plaintiffs and Estates Funding Solutions for Beneficiaries, Executors and Trustees.
-          </p>
+          <p className="text-sm md:text-base font-bold text-black max-w-3xl mx-auto leading-relaxed">
+           For Individuals: Settlement Advances for Personal Injury Plaintiffs and Estates Funding Solutions for Beneficiaries, Executors and Trustees.
+           </p>
 
           <Image
             src="/badges.png"
