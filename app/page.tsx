@@ -35,85 +35,78 @@ export default function Page() {
   };
 
   return (
-    <main className="relative min-h-screen overflow-hidden
-    bg-[linear-gradient(to_right,#e6f4f3_0%,#ffffff_12%,#ffffff_88%,#e6f4f3_100%)]">
+    <main className="relative min-h-screen overflow-hidden bg-[linear-gradient(to_right,#e6f4f3_0%,#ffffff_12%,#ffffff_88%,#e6f4f3_100%)]">
 
       {/* BACKGROUND GLOW */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[400px] bg-teal-100 opacity-30 blur-3xl rounded-full pointer-events-none"></div>
 
-      {/* TOP NAV SYSTEM */}
+      {/* NAV */}
       <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-200 shadow-sm">
+        <div className="max-w-6xl mx-auto px-4 py-3 space-y-3">
 
-  <div className="max-w-6xl mx-auto px-4 py-3 space-y-3">
+          {/* TOP BAR */}
+          <div className="flex justify-end items-center text-xs md:text-sm text-gray-700 gap-4">
+            <span className="font-semibold tracking-wide">1-888-800-4966</span>
 
-    {/* TOP BAR */}
-    <div className="flex justify-end items-center text-xs md:text-sm text-gray-700 gap-4">
+            <span className="text-gray-300">|</span>
 
-      <span className="font-semibold tracking-wide">1-888-800-4966</span>
+            <a href="#" className="hover:text-teal-600 transition font-medium">
+              Log In
+            </a>
 
-      <span className="text-gray-300">|</span>
+            <span className="text-gray-300">|</span>
 
-      <a href="#" className="hover:text-teal-600 transition font-medium">
-        Log In
-      </a>
+            {/* ✅ FIXED ICONS */}
+            <div className="flex items-center gap-3">
+              <FaFacebook size={16} className="hover:text-teal-600 cursor-pointer transition" />
+              <FaTwitter size={16} className="hover:text-teal-600 cursor-pointer transition" />
+              <FaLinkedin size={16} className="hover:text-teal-600 cursor-pointer transition" />
+            </div>
+          </div>
 
-      <span className="text-gray-300">|</span>
+          {/* MAIN NAV */}
+          <div className="flex justify-between items-center">
+            <div className="font-bold text-lg tracking-tight">
+              SteveLaw Investments
+            </div>
 
-      <div className="flex items-center gap-3">
-        <Facebook size={16} className="hover:text-teal-600 cursor-pointer transition" />
-        <Twitter size={16} className="hover:text-teal-600 cursor-pointer transition" />
-        <Linkedin size={16} className="hover:text-teal-600 cursor-pointer transition" />
-      </div>
+            <div className="hidden md:flex gap-8 text-sm font-semibold tracking-wide">
+              <a href="#" className="relative group">
+                Home
+                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-teal-600 transition-all group-hover:w-full"></span>
+              </a>
 
-    </div>
+              <a href="#services" className="relative group">
+                Services
+                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-teal-600 transition-all group-hover:w-full"></span>
+              </a>
 
-    {/* MAIN NAV */}
-    <div className="flex justify-between items-center">
+              <a href="#" className="relative group">
+                Blog
+                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-teal-600 transition-all group-hover:w-full"></span>
+              </a>
 
-      <div className="font-bold text-lg tracking-tight">
-        SteveLaw Investments
-      </div>
+              <a href="#" className="relative group">
+                About
+                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-teal-600 transition-all group-hover:w-full"></span>
+              </a>
 
-      <div className="hidden md:flex gap-8 text-sm font-semibold tracking-wide">
-        <a href="#" className="relative group">
-          Home
-          <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-teal-600 transition-all group-hover:w-full"></span>
-        </a>
+              <a href="#contact" className="relative group">
+                Contact
+                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-teal-600 transition-all group-hover:w-full"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
 
-        <a href="#services" className="relative group">
-          Services
-          <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-teal-600 transition-all group-hover:w-full"></span>
-        </a>
-
-        <a href="#" className="relative group">
-          Blog
-          <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-teal-600 transition-all group-hover:w-full"></span>
-        </a>
-
-        <a href="#" className="relative group">
-          About
-          <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-teal-600 transition-all group-hover:w-full"></span>
-        </a>
-
-        <a href="#contact" className="relative group">
-          Contact
-          <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-teal-600 transition-all group-hover:w-full"></span>
-        </a>
-      </div>
-
-    </div>
-  </div>
-</nav>
-
-      {/* PAGE CONTAINER */}
+      {/* CONTENT */}
       <div className="max-w-6xl mx-auto px-4 space-y-16 py-10">
 
         {/* HERO */}
         <section className="text-center space-y-6 py-16 bg-white rounded-xl shadow-sm border border-gray-100">
-
-          {/* TOP LINE */}
-          <p className="text-sm md:text-base font-bold text-black max-w-3xl mx-auto leading-relaxed">
-            For Individuals: Settlement Advances for Personal Injury Plaintiffs and Estates Funding Solutions for Beneficiaries, Executors and Trustees.
+          <p className="text-sm md:text-base font-bold text-black max-w-3xl mx-auto">
+            Settlement Advances for Personal Injury Plaintiffs and Estate Funding Solutions.
           </p>
 
           <Image
@@ -140,10 +133,7 @@ export default function Page() {
             <span>✔ 100% Confidential</span>
           </div>
 
-          <a
-            href="#contact"
-            className="bg-teal-600 text-white px-6 py-3 rounded-lg inline-block transition hover:bg-teal-700 active:scale-95"
-          >
+          <a href="#contact" className="bg-teal-600 text-white px-6 py-3 rounded-lg hover:bg-teal-700">
             Apply for Funding
           </a>
         </section>
@@ -159,13 +149,10 @@ export default function Page() {
               "Law Firm Financing",
               "Business & Loan Funding",
             ].map((title, i) => (
-              <details
-                key={i}
-                className="border border-gray-200 p-5 rounded-xl shadow-sm bg-white hover:shadow-md transition"
-              >
+              <details key={i} className="border p-5 rounded-xl bg-white">
                 <summary className="font-semibold text-lg cursor-pointer">{title}</summary>
-                <p className="text-gray-700 mt-3">
-                  Professional funding solutions tailored to your needs with fast approvals and flexible structures.
+                <p className="mt-3 text-gray-700">
+                  Fast approvals, flexible funding, no upfront cost.
                 </p>
               </details>
             ))}
@@ -173,55 +160,47 @@ export default function Page() {
         </section>
 
         {/* CONTACT */}
-        <section id="contact" className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-          <h2 className="text-2xl font-semibold text-center text-gray-900 mb-4">
+        <section id="contact" className="bg-white p-6 rounded-xl border">
+          <h2 className="text-2xl font-semibold text-center mb-4">
             Apply for Funding
           </h2>
 
           <form onSubmit={handleSubmit} className="max-w-xl mx-auto space-y-4">
             <input name="name" placeholder="Full Name" required className="w-full border p-3 rounded-lg" />
-            <input name="email" type="email" placeholder="Email Address" required className="w-full border p-3 rounded-lg" />
-            <input name="phone" placeholder="Phone Number" required className="w-full border p-3 rounded-lg" />
+            <input name="email" type="email" placeholder="Email" required className="w-full border p-3 rounded-lg" />
+            <input name="phone" placeholder="Phone" required className="w-full border p-3 rounded-lg" />
 
             <select name="service" required className="w-full border p-3 rounded-lg">
               <option value="">Select Service</option>
               <option>Settlement Advance</option>
               <option>Lawsuit Funding</option>
               <option>Law Firm Financing</option>
-              <option>Business / Loan Funding</option>
+              <option>Business Funding</option>
             </select>
 
-            <button
-              type="submit"
-              disabled={loading}
-              className="bg-teal-600 text-white py-3 rounded-lg w-full hover:bg-teal-700 disabled:opacity-50"
-            >
+            <button type="submit" disabled={loading} className="bg-teal-600 text-white py-3 rounded-lg w-full">
               {loading ? "Submitting..." : "Submit Request"}
             </button>
 
-            {status === "success" && (
-              <p className="text-green-600 text-center text-sm">
-                ✅ Submitted successfully. We’ll contact you shortly.
-              </p>
-            )}
-
-            {status === "error" && (
-              <p className="text-red-600 text-center text-sm">
-                ❌ Something went wrong. Try again.
-              </p>
-            )}
+            {status === "success" && <p className="text-green-600 text-center">Submitted successfully</p>}
+            {status === "error" && <p className="text-red-600 text-center">Something went wrong</p>}
           </form>
         </section>
 
         {/* FOOTER */}
         <footer className="mt-12 border-t pt-6">
-  <div className="flex justify-between items-center max-w-6xl mx-auto px-4">
-    <p className="text-sm text-gray-500">© 2026 SteveLaw Investments</p>
+          <div className="flex justify-between items-center max-w-6xl mx-auto px-4">
+            <p className="text-sm text-gray-500">© 2026 SteveLaw Investments</p>
 
-    <div className="flex items-center gap-3">
-      <FaFacebook size={16} className="hover:text-teal-600 cursor-pointer transition" />
-      <FaTwitter size={16} className="hover:text-teal-600 cursor-pointer transition" />
-      <FaLinkedin size={16} className="hover:text-teal-600 cursor-pointer transition" />
-    </div>
-  </div>
-</footer>
+            <div className="flex items-center gap-3">
+              <FaFacebook size={16} />
+              <FaTwitter size={16} />
+              <FaLinkedin size={16} />
+            </div>
+          </div>
+        </footer>
+
+      </div>
+    </main>
+  );
+}
