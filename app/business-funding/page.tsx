@@ -10,14 +10,6 @@ export default function BusinessFundingPage() {
       {/* BACKGROUND GLOW */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[400px] bg-teal-100 opacity-30 blur-3xl rounded-full pointer-events-none"></div>
 
-      {/* NAV */}
-      <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-200 shadow-sm">
-        <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-          <div className="font-bold text-lg">SteveLaw Investments</div>
-          <a href="/" className="text-sm font-semibold hover:text-teal-600">Home</a>
-        </div>
-      </nav>
-
       {/* CONTENT */}
       <div className="max-w-5xl mx-auto px-4 py-16 space-y-12">
 

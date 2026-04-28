@@ -64,42 +64,6 @@ export default function Page() {
             </div>
           </div>
 
-          {/* MAIN NAV */}
-          <div className="flex justify-between items-center">
-            <div className="font-bold text-lg tracking-tight">
-              SteveLaw Investments
-            </div>
-
-            <div className="hidden md:flex gap-8 text-sm font-semibold tracking-wide">
-              <a href="#" className="relative group">
-                Home
-                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-teal-600 transition-all group-hover:w-full"></span>
-              </a>
-
-              <a href="#services" className="relative group">
-                Services
-                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-teal-600 transition-all group-hover:w-full"></span>
-              </a>
-
-              <a href="#" className="relative group">
-                Blog
-                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-teal-600 transition-all group-hover:w-full"></span>
-              </a>
-
-              <a href="#" className="relative group">
-                About
-                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-teal-600 transition-all group-hover:w-full"></span>
-              </a>
-
-              <a href="#contact" className="relative group">
-                Contact
-                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-teal-600 transition-all group-hover:w-full"></span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </nav>
-
       {/* CONTENT */}
       <div className="max-w-6xl mx-auto px-4 space-y-16 py-10">
 
@@ -191,20 +155,4 @@ export default function Page() {
           </form>
         </section>
 
-        {/* FOOTER */}
-        <footer className="mt-12 border-t pt-6">
-          <div className="flex justify-between items-center max-w-6xl mx-auto px-4">
-            <p className="text-sm text-gray-500">© 2026 SteveLaw Investments</p>
-
-            <div className="flex items-center gap-3">
-              <FaFacebook size={16} />
-              <FaTwitter size={16} />
-              <FaLinkedin size={16} />
-            </div>
-          </div>
-        </footer>
-
-      </div>
-    </main>
-  );
-}
+       
