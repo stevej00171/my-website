@@ -40,7 +40,7 @@ export default function Page() {
       {/* BACKGROUND GLOW */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[400px] bg-teal-100 opacity-30 blur-3xl rounded-full pointer-events-none"></div>
 
-      {/* NAV (FULL WIDTH) */}
+      {/* NAV */}
       <nav className="sticky top-0 bg-white/80 backdrop-blur-md z-50 border-b border-gray-200">
         <div className="max-w-6xl mx-auto flex justify-between items-center py-4 px-4">
           <div className="font-bold text-lg">SteveLaw Investments</div>
@@ -57,7 +57,19 @@ export default function Page() {
 
         {/* HERO */}
         <section className="text-center space-y-6 py-16 bg-white rounded-xl shadow-sm border border-gray-100">
-          <Image src="/badges.png" alt="Awards" width={420} height={130} className="mx-auto object-contain" />
+
+          {/* NEW TOP LINE */}
+          <p className="text-xs md:text-sm text-gray-500 max-w-3xl mx-auto leading-relaxed">
+            For Individuals: Settlement Advances for Personal Injury Plaintiffs and Estates Funding Solutions for Beneficiaries, Executors and Trustees.
+          </p>
+
+          <Image
+            src="/badges.png"
+            alt="Awards"
+            width={420}
+            height={130}
+            className="mx-auto object-contain"
+          />
 
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
             Canada’s Leading Litigation Funding Solutions
