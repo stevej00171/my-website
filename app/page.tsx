@@ -214,17 +214,14 @@ export default function Page() {
         </section>
 
         {/* FOOTER */}
-        <footer className="text-sm text-gray-600 space-y-4 pt-10 border-t">
-          <div className="font-semibold text-black">SteveLaw Investments</div>
+        <footer className="mt-12 border-t pt-6">
+  <div className="flex justify-between items-center max-w-6xl mx-auto px-4">
+    <p className="text-sm text-gray-500">© 2026 SteveLaw Investments</p>
 
-          <div className="space-y-1">
-            <div>Phone: <a href="tel:14162220000">1-416-222-0000</a></div>
-            <div>Email: <a href="mailto:stevej00171@gmail.com">stevej00171@gmail.com</a></div>
-            <div>Toronto, Canada</div>
-          </div>
-        </footer>
-
-      </div>
-    </main>
-  );
-}
+    <div className="flex items-center gap-3">
+      <FaFacebook size={16} className="hover:text-teal-600 cursor-pointer transition" />
+      <FaTwitter size={16} className="hover:text-teal-600 cursor-pointer transition" />
+      <FaLinkedin size={16} className="hover:text-teal-600 cursor-pointer transition" />
+    </div>
+  </div>
+</footer>
