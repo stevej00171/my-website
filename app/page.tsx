@@ -140,24 +140,28 @@ export default function Page() {
 
         {/* SERVICES */}
         <section id="services" className="space-y-6">
-          <h2 className="text-2xl font-semibold text-gray-900">Our Services</h2>
+  <h2 className="text-2xl font-semibold text-gray-900">Our Services</h2>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {[
-              <a href="/settlement-advances">Settlement Advances</a>
-              "Lawsuit Funding",
-              "Law Firm Financing",
-              "Business & Loan Funding",
-            ].map((title, i) => (
-              <details key={i} className="border p-5 rounded-xl bg-white">
-                <summary className="font-semibold text-lg cursor-pointer">{title}</summary>
-                <p className="mt-3 text-gray-700">
-                  Fast approvals, flexible funding, no upfront cost.
-                </p>
-              </details>
-            ))}
-          </div>
-        </section>
+  <div className="grid md:grid-cols-2 gap-6">
+    {[
+      { title: "Settlement Advances", href: "/settlement-advances" },
+      { title: "Lawsuit Funding", href: "/lawsuit-funding" },
+      { title: "Law Firm Financing", href: "/law-firm-financing" },
+      { title: "Business & Loan Funding", href: "/business-funding" },
+    ].map((item, i) => (
+      <a
+        key={i}
+        href={item.href}
+        className="block border p-5 rounded-xl bg-white hover:shadow-md transition"
+      >
+        <h3 className="font-semibold text-lg">{item.title}</h3>
+        <p className="mt-3 text-gray-700">
+          Fast approvals, flexible funding, no upfront cost.
+        </p>
+      </a>
+    ))}
+  </div>
+</section>
 
         {/* CONTACT */}
         <section id="contact" className="bg-white p-6 rounded-xl border">
