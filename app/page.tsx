@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { Facebook, Twitter, Linkedin } from "lucide-react"; // 👈 add this line
+import { Facebook, Twitter, LinkedinIcon } from "lucide-react";
 
 export default function Page() {
   const [status, setStatus] = useState("");
