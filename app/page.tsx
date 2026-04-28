@@ -47,7 +47,7 @@ export default function Page() {
 
           {/* TOP RIGHT BAR */}
           <div className="flex justify-end items-center text-xs md:text-sm text-gray-700 gap-4">
-            <span className="font-semibold">1-888-800-4966</span>
+            <span className="font-semibold">1-888-000-0000</span>
 
             <span className="text-gray-400">|</span>
 
