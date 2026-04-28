@@ -56,13 +56,15 @@ export default function Page() {
 
             <span className="text-gray-300">|</span>
 
-            {/* ✅ FIXED ICONS */}
             <div className="flex items-center gap-3">
               <FaFacebook size={16} className="hover:text-teal-600 cursor-pointer transition" />
               <FaTwitter size={16} className="hover:text-teal-600 cursor-pointer transition" />
               <FaLinkedin size={16} className="hover:text-teal-600 cursor-pointer transition" />
             </div>
           </div>
+
+        </div>
+      </nav>
 
       {/* CONTENT */}
       <div className="max-w-6xl mx-auto px-4 space-y-16 py-10">
@@ -104,28 +106,28 @@ export default function Page() {
 
         {/* SERVICES */}
         <section id="services" className="space-y-6">
-  <h2 className="text-2xl font-semibold text-gray-900">Our Services</h2>
+          <h2 className="text-2xl font-semibold text-gray-900">Our Services</h2>
 
-  <div className="grid md:grid-cols-2 gap-6">
-    {[
-      { title: "Settlement Advances", href: "/settlement-advances" },
-      { title: "Lawsuit Funding", href: "/lawsuit-funding" },
-      { title: "Law Firm Financing", href: "/law-firm-financing" },
-      { title: "Business & Loan Funding", href: "/business-funding" },
-    ].map((item, i) => (
-      <a
-        key={i}
-        href={item.href}
-        className="block border p-5 rounded-xl bg-white hover:shadow-md transition"
-      >
-        <h3 className="font-semibold text-lg">{item.title}</h3>
-        <p className="mt-3 text-gray-700">
-          Fast approvals, flexible funding, no upfront cost.
-        </p>
-      </a>
-    ))}
-  </div>
-</section>
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              { title: "Settlement Advances", href: "/settlement-advances" },
+              { title: "Lawsuit Funding", href: "/lawsuit-funding" },
+              { title: "Law Firm Financing", href: "/law-firm-financing" },
+              { title: "Business & Loan Funding", href: "/business-funding" },
+            ].map((item, i) => (
+              <a
+                key={i}
+                href={item.href}
+                className="block border p-5 rounded-xl bg-white hover:shadow-md transition"
+              >
+                <h3 className="font-semibold text-lg">{item.title}</h3>
+                <p className="mt-3 text-gray-700">
+                  Fast approvals, flexible funding, no upfront cost.
+                </p>
+              </a>
+            ))}
+          </div>
+        </section>
 
         {/* CONTACT */}
         <section id="contact" className="bg-white p-6 rounded-xl border">
@@ -155,4 +157,7 @@ export default function Page() {
           </form>
         </section>
 
-       
+      </div>
+    </main>
+  );
+}
