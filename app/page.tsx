@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { Facebook, Twitter, Linkedin } from "lucide-react"; // 👈 add this line
 
 export default function Page() {
   const [status, setStatus] = useState("");
@@ -41,41 +42,68 @@ export default function Page() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[400px] bg-teal-100 opacity-30 blur-3xl rounded-full pointer-events-none"></div>
 
       {/* TOP NAV SYSTEM */}
-      <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
+      <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-200 shadow-sm">
 
-        <div className="max-w-6xl mx-auto px-4 py-3 space-y-2">
+  <div className="max-w-6xl mx-auto px-4 py-3 space-y-3">
 
-          {/* TOP RIGHT BAR */}
-          <div className="flex justify-end items-center text-xs md:text-sm text-gray-700 gap-4">
-            <span className="font-semibold">1-888-000-0000</span>
+    {/* TOP BAR */}
+    <div className="flex justify-end items-center text-xs md:text-sm text-gray-700 gap-4">
 
-            <span className="text-gray-400">|</span>
+      <span className="font-semibold tracking-wide">1-888-800-4966</span>
 
-            <a href="#" className="hover:text-teal-600">Log In</a>
+      <span className="text-gray-300">|</span>
 
-            <span className="text-gray-400">|</span>
+      <a href="#" className="hover:text-teal-600 transition font-medium">
+        Log In
+      </a>
 
-            <a href="#" className="hover:text-teal-600">F</a>
-            <a href="#" className="hover:text-teal-600">X</a>
-            <a href="#" className="hover:text-teal-600">in</a>
-          </div>
+      <span className="text-gray-300">|</span>
 
-          {/* MAIN NAV */}
-          <div className="flex justify-center md:justify-between items-center flex-wrap gap-4">
+      <div className="flex items-center gap-3">
+        <Facebook size={16} className="hover:text-teal-600 cursor-pointer transition" />
+        <Twitter size={16} className="hover:text-teal-600 cursor-pointer transition" />
+        <Linkedin size={16} className="hover:text-teal-600 cursor-pointer transition" />
+      </div>
 
-            <div className="font-bold text-lg">SteveLaw Investments</div>
+    </div>
 
-            <div className="flex gap-6 text-sm md:text-base font-semibold tracking-wide">
-              <a href="#" className="hover:text-teal-600">Home</a>
-              <a href="#services" className="hover:text-teal-600">Services</a>
-              <a href="#" className="hover:text-teal-600">Blog</a>
-              <a href="#" className="hover:text-teal-600">About</a>
-              <a href="#contact" className="hover:text-teal-600">Contact</a>
-            </div>
+    {/* MAIN NAV */}
+    <div className="flex justify-between items-center">
 
-          </div>
-        </div>
-      </nav>
+      <div className="font-bold text-lg tracking-tight">
+        SteveLaw Investments
+      </div>
+
+      <div className="hidden md:flex gap-8 text-sm font-semibold tracking-wide">
+        <a href="#" className="relative group">
+          Home
+          <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-teal-600 transition-all group-hover:w-full"></span>
+        </a>
+
+        <a href="#services" className="relative group">
+          Services
+          <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-teal-600 transition-all group-hover:w-full"></span>
+        </a>
+
+        <a href="#" className="relative group">
+          Blog
+          <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-teal-600 transition-all group-hover:w-full"></span>
+        </a>
+
+        <a href="#" className="relative group">
+          About
+          <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-teal-600 transition-all group-hover:w-full"></span>
+        </a>
+
+        <a href="#contact" className="relative group">
+          Contact
+          <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-teal-600 transition-all group-hover:w-full"></span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
 
       {/* PAGE CONTAINER */}
       <div className="max-w-6xl mx-auto px-4 space-y-16 py-10">
