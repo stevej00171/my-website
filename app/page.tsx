@@ -4,6 +4,11 @@ export default function Home() {
 
       {/* HERO */}
       <section className="py-24 text-center">
+
+        <div className="text-teal-600 text-xl font-semibold mb-2 tracking-widest uppercase">
+          MJF Capital
+        </div>
+
         <h1 className="text-4xl font-bold mb-4">
           McCowan, Jeffrey & Fich
         </h1>
