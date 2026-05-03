@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Upload Test</title>
+</head>
+<body>
+
+  <h2>Upload File</h2>
+  <input type="file" id="fileInput" />
+
+  <script type="module">
+    import { uploadFile } from './supabase.js'
+
+    document.getElementById('fileInput').addEventListener('change', async (e) => {
+      const file = e.target.files[0]
+      if (!file) return
+
+      await uploadFile(file)
+    })
+  </script>
+
+</body>
+</html>

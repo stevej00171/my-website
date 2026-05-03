@@ -20,13 +20,15 @@ export default function BusinessFundingPage() {
             Fast, flexible funding to help your business grow, manage cash flow, and seize new opportunities.
           </p>
 
-          <Image
-            src="/badges.png"
-            alt="Trust badges"
-            width={420}
-            height={130}
-            className="mx-auto"
-          />
+         <Image
+         src="/badges.png"
+         alt="Trust badges"
+         width={420}
+         height={130}
+         className="mx-auto"
+         style={{ height: "auto" }}
+         loading="eager"
+      />
 
           <div className="flex justify-center gap-4 text-sm text-gray-600 flex-wrap">
             <span>✔ Fast Approvals</span>
@@ -34,8 +36,9 @@ export default function BusinessFundingPage() {
             <span>✔ All Credit Types Considered</span>
           </div>
 
+          {/* ✅ FIXED CTA */}
           <a
-            href="/#contact"
+            href="/apply"
             className="inline-block bg-teal-600 text-white px-6 py-3 rounded-lg hover:bg-teal-700 transition"
           >
             Apply for Funding
@@ -113,8 +116,9 @@ export default function BusinessFundingPage() {
             No obligation. Fast decisions. Built for growth.
           </p>
 
+          {/* ✅ FIXED CTA */}
           <a
-            href="/#contact"
+            href="/apply"
             className="inline-block mt-4 bg-teal-600 text-white px-6 py-3 rounded-lg hover:bg-teal-700"
           >
             Start Application

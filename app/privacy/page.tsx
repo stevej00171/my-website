@@ -34,11 +34,19 @@ export default function Privacy() {
         By using our website, you consent to the terms of this Privacy Policy.
       </p>
 
-      <h2 className="text-xl font-semibold">Contact Us</h2>
-      <p>
-        If you have any questions about this Privacy Policy, you may contact us at First Canadian Place, 5600-100 King St W, Toronto, ON M5X 1C9
-        Phone: 1-416-222-0000
-        Email: stevej00171@gmail.com
+     <h2 className="text-xl font-semibold">Contact Us</h2>
+
+<p>
+  If you have any questions about this Privacy Policy, you may contact us at:
+</p>
+
+<p className="text-sm text-gray-600">
+  First Canadian Place<br />
+  5600-100 King St W<br />
+  Toronto, ON M5X 1C9<br />
+  Phone: 1-416-222-0000<br />
+  Email: stevej00171@gmail.com
+  
       </p>
     </main>
   );

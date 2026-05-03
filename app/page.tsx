@@ -1,163 +1,48 @@
-"use client";
-
-import Image from "next/image";
-import { useState } from "react";
-import { FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
-
-export default function Page() {
-  const [status, setStatus] = useState("");
-  const [loading, setLoading] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setLoading(true);
-
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        body: formData,
-      });
-
-      if (res.ok) {
-        setStatus("success");
-        form.reset();
-      } else {
-        setStatus("error");
-      }
-    } catch {
-      setStatus("error");
-    }
-
-    setLoading(false);
-  };
-
+export default function Home() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[linear-gradient(to_right,#e6f4f3_0%,#ffffff_12%,#ffffff_88%,#e6f4f3_100%)]">
+    <main className="min-h-screen bg-white text-gray-900">
 
-      {/* BACKGROUND GLOW */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[400px] bg-teal-100 opacity-30 blur-3xl rounded-full pointer-events-none"></div>
+      {/* HERO */}
+      <section className="py-24 text-center">
+        <h1 className="text-4xl font-bold mb-4">
+          McCowan, Jeffrey & Fich
+        </h1>
 
-      {/* NAV */}
-      <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-200 shadow-sm">
-        <div className="max-w-6xl mx-auto px-4 py-3 space-y-3">
+        <p className="text-lg text-gray-600 mb-6">
+          Structured Finance Solutions
+        </p>
 
-          {/* TOP BAR */}
-          <div className="flex justify-end items-center text-xs md:text-sm text-gray-700 gap-4">
-            <span className="font-semibold tracking-wide">1-888-800-4966</span>
+        <a
+          href="/project-funding"
+          className="bg-black text-white px-6 py-3 rounded-md"
+        >
+          View Funding Programs
+        </a>
+      </section>
 
-            <span className="text-gray-300">|</span>
+      {/* BADGES */}
+      <section className="py-16 text-center border-t">
+        <h2 className="text-xl font-semibold mb-6">
+          Recognized & Trusted
+        </h2>
 
-            <a href="#" className="hover:text-teal-600 transition font-medium">
-              Log In
-            </a>
+        <img
+          src="/badges.png"
+          alt="Badges"
+          className="mx-auto max-w-md"
+        />
+      </section>
 
-            <span className="text-gray-300">|</span>
+      {/* CTA */}
+      <section className="py-20 text-center">
+        <a
+          href="/portal"
+          className="bg-black text-white px-6 py-3 rounded-md"
+        >
+          Client Portal Access
+        </a>
+      </section>
 
-            <div className="flex items-center gap-3">
-              <FaFacebook size={16} className="hover:text-teal-600 cursor-pointer transition" />
-              <FaTwitter size={16} className="hover:text-teal-600 cursor-pointer transition" />
-              <FaLinkedin size={16} className="hover:text-teal-600 cursor-pointer transition" />
-            </div>
-          </div>
-
-        </div>
-      </nav>
-
-      {/* CONTENT */}
-      <div className="max-w-6xl mx-auto px-4 space-y-16 py-10">
-
-        {/* HERO */}
-        <section className="text-center space-y-6 py-16 bg-white rounded-xl shadow-sm border border-gray-100">
-          <p className="text-sm md:text-base font-bold text-black max-w-3xl mx-auto">
-            Settlement Advances for Personal Injury Plaintiffs and Estate Funding Solutions.
-          </p>
-
-          <Image
-            src="/badges.png"
-            alt="Awards"
-            width={420}
-            height={130}
-            className="mx-auto object-contain"
-          />
-
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
-            Canada’s Leading Litigation Funding Solutions
-          </h1>
-
-          <div className="w-16 h-1 bg-teal-600 mx-auto rounded"></div>
-
-          <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
-            Fast, confidential settlement funding—so you don’t have to wait months or years.
-          </p>
-
-          <div className="flex flex-wrap justify-center gap-3 text-xs md:text-sm text-gray-600">
-            <span>✔ No Win, No Repayment</span>
-            <span>✔ Fast Approval</span>
-            <span>✔ 100% Confidential</span>
-          </div>
-
-          <a href="#contact" className="bg-teal-600 text-white px-6 py-3 rounded-lg hover:bg-teal-700">
-            Apply for Funding
-          </a>
-        </section>
-
-        {/* SERVICES */}
-        <section id="services" className="space-y-6">
-          <h2 className="text-2xl font-semibold text-gray-900">Our Services</h2>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {[
-              { title: "Settlement Advances", href: "/settlement-advances" },
-              { title: "Lawsuit Funding", href: "/lawsuit-funding" },
-              { title: "Law Firm Financing", href: "/law-firm-financing" },
-              { title: "Business & Loan Funding", href: "/business-funding" },
-            ].map((item, i) => (
-              <a
-                key={i}
-                href={item.href}
-                className="block border p-5 rounded-xl bg-white hover:shadow-md transition"
-              >
-                <h3 className="font-semibold text-lg">{item.title}</h3>
-                <p className="mt-3 text-gray-700">
-                  Fast approvals, flexible funding, no upfront cost.
-                </p>
-              </a>
-            ))}
-          </div>
-        </section>
-
-        {/* CONTACT */}
-        <section id="contact" className="bg-white p-6 rounded-xl border">
-          <h2 className="text-2xl font-semibold text-center mb-4">
-            Apply for Funding
-          </h2>
-
-          <form onSubmit={handleSubmit} className="max-w-xl mx-auto space-y-4">
-            <input name="name" placeholder="Full Name" required className="w-full border p-3 rounded-lg" />
-            <input name="email" type="email" placeholder="Email" required className="w-full border p-3 rounded-lg" />
-            <input name="phone" placeholder="Phone" required className="w-full border p-3 rounded-lg" />
-
-            <select name="service" required className="w-full border p-3 rounded-lg">
-              <option value="">Select Service</option>
-              <option>Settlement Advance</option>
-              <option>Lawsuit Funding</option>
-              <option>Law Firm Financing</option>
-              <option>Business Funding</option>
-            </select>
-
-            <button type="submit" disabled={loading} className="bg-teal-600 text-white py-3 rounded-lg w-full">
-              {loading ? "Submitting..." : "Submit Request"}
-            </button>
-
-            {status === "success" && <p className="text-green-600 text-center">Submitted successfully</p>}
-            {status === "error" && <p className="text-red-600 text-center">Something went wrong</p>}
-          </form>
-        </section>
-
-      </div>
     </main>
   );
 }

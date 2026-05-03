@@ -1,70 +1,45 @@
+import { NextResponse } from "next/server";
 import { Resend } from "resend";
-import { createClient } from "@supabase/supabase-js";
 
-const resend = new Resend(process.env.RESEND_API_KEY!);
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_ANON_KEY!
-);
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
   try {
-    const formData = await req.formData();
+    const body = await req.json();
 
-const name = formData.get("name") as string;
-const email = formData.get("email") as string;
-const phone = formData.get("phone") as string;
-const service = formData.get("service") as string;
+    const { name, email, message } = body;
 
-    // Save to Supabase (optional, will work if configured)
-    await supabase.from("leads").insert([
-      {
-        name,
-        email,
-        phone,
-        service,
-      },
-    ]);
+    // Basic validation (prevents crashes / bad requests)
+    if (!name || !email || !message) {
+      return NextResponse.json(
+        { error: "Missing fields" },
+        { status: 400 }
+      );
+    }
 
-    // Send email to YOU
-    const result = await resend.emails.send({
-      from: "onboarding@resend.dev",
-      to: "stevej00171@gmail.com",
-      subject: "New Contact Form Submission",
+    // Send email
+    const response = await resend.emails.send({
+      from: "Website Contact <onboarding@resend.dev>", // safe test sender
+      to: ["info@mjf-finance.com"],
+      subject: `New Contact Message from ${name}`,
+      reply_to: email,
       html: `
-        <h2>New Lead</h2>
+        <h2>New Contact Form Submission</h2>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone}</p>
-        <p><strong>Service:</strong> ${service}</p>
-        <p><strong>Time:</strong> ${new Date().toLocaleString()}</p>
+        <p><strong>Message:</strong></p>
+        <p>${message}</p>
       `,
     });
 
-    // Auto-reply to user
-    await resend.emails.send({
-      from: "onboarding@resend.dev",
-      to: email,
-      subject: "We received your request",
-      html: `
-        <p>Hi ${name},</p>
-        <p>Thanks for reaching out. We’ll contact you shortly.</p>
-        <p>- SteveLaw Investments</p>
-      `,
-    });
-
-    console.log("EMAIL SENT:", result);
-
-    return new Response(JSON.stringify({ success: true }), {
-      status: 200,
-    });
+    return NextResponse.json({ success: true, response });
 
   } catch (error) {
-    console.error("ERROR:", error);
+    console.error("CONTACT API ERROR:", error);
 
-    return new Response(JSON.stringify({ error: "fail" }), {
-      status: 500,
-    });
+    return NextResponse.json(
+      { error: "Failed to send email" },
+      { status: 500 }
+    );
   }
 }

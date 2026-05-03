@@ -21,12 +21,14 @@ export default function LawFirmFinancingPage() {
           </p>
 
           <Image
-            src="/badges.png"
-            alt="Trust badges"
-            width={420}
-            height={130}
-            className="mx-auto"
-          />
+           src="/badges.png"
+           alt="Trust badges"
+           width={420}
+           height={130}
+           className="mx-auto"
+           style={{ height: "auto" }}
+           loading="eager"
+         />
 
           <div className="flex justify-center gap-4 text-sm text-gray-600 flex-wrap">
             <span>✔ Case-Based Financing</span>
@@ -34,16 +36,17 @@ export default function LawFirmFinancingPage() {
             <span>✔ Scalable Capital</span>
           </div>
 
+          {/* ✅ FIXED CTA */}
           <a
-            href="/#contact"
+            href="/apply"
             className="inline-block bg-teal-600 text-white px-6 py-3 rounded-lg hover:bg-teal-700 transition"
           >
             Request Funding
           </a>
-        </section>
+          </section>
 
-        {/* CONTENT */}
-        <section className="bg-white p-6 rounded-xl shadow-sm border space-y-6">
+          {/* CONTENT */}
+         <section className="bg-white p-6 rounded-xl shadow-sm border space-y-6">
           <h2 className="text-2xl font-semibold text-gray-900">
             Financing Built for Law Firms
           </h2>
@@ -95,8 +98,9 @@ export default function LawFirmFinancingPage() {
             Fast approvals. Flexible structures. Built for legal professionals.
           </p>
 
+          {/* ✅ FIXED CTA */}
           <a
-            href="/#contact"
+            href="/apply"
             className="inline-block mt-4 bg-teal-600 text-white px-6 py-3 rounded-lg hover:bg-teal-700"
           >
             Get Started
