@@ -8,6 +8,7 @@ import { FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
 import { supabase } from "../lib/supabaseClient";
 
 export default function RootLayout({ children }: { children: ReactNode }) {
+  console.log("LAYOUT UPDATED");
   const pathname = usePathname();
   const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -240,21 +241,18 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           </div>
         </footer>
 
-        {/* APPLY BUTTON */}
-        <
-        <a
-        href="tel:+16476933330"
-       ="fixed bottom-6 left-6 z-50 bg-black text-white px-6 py-3 rounded-md shadow-lg hover:bg-gray-800 transition text-sm font-medium md:hidden"
-       >
-      📞 Call Now
-      </a>
-          href="/apply"
-          className="fixed bottom-6 right-6 z-50 bg-black text-white px-6 py-3 rounded-md shadow-lg hover:bg-gray-800 transition text-sm font-medium"
-        >
-          Apply Now
-        </Link>
+        {/* CALL BUTTON (mobile only) */}
+<a
+  href="tel:+16476933330"
+  className="fixed bottom-6 left-6 z-50 bg-black text-white px-6 py-3 rounded-md shadow-lg hover:bg-gray-800 transition text-sm font-medium md:hidden"
+>
+  📞 Call Now
+</a>
 
-      </body>
-    </html>
-  );
-}
+{/* APPLY BUTTON */}
+<Link
+  href="/apply"
+  className="fixed bottom-6 right-6 z-50 bg-black text-white px-6 py-3 rounded-md shadow-lg hover:bg-gray-800 transition text-sm font-medium"
+>
+  Apply Now
+</Link>
