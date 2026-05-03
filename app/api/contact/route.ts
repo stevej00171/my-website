@@ -22,7 +22,7 @@ export async function POST(req: Request) {
       from: "Website Contact <onboarding@resend.dev>", // safe test sender
       to: ["info@mjf-finance.com"],
       subject: `New Contact Message from ${name}`,
-      reply_to: email,
+      replyTo: email,
       html: `
         <h2>New Contact Form Submission</h2>
         <p><strong>Name:</strong> ${name}</p>
