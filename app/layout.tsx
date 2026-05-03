@@ -241,7 +241,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </footer>
 
         {/* APPLY BUTTON */}
-        <Link
+        <
+        <a
+        href="tel:+16476933330"
+       ="fixed bottom-6 left-6 z-50 bg-black text-white px-6 py-3 rounded-md shadow-lg hover:bg-gray-800 transition text-sm font-medium md:hidden"
+       >
+      📞 Call Now
+      </a>
           href="/apply"
           className="fixed bottom-6 right-6 z-50 bg-black text-white px-6 py-3 rounded-md shadow-lg hover:bg-gray-800 transition text-sm font-medium"
         >
