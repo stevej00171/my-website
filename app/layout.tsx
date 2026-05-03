@@ -13,7 +13,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [user, setUser] = useState<any>(null);
 
-  // ✅ Check auth state
   useEffect(() => {
     supabase.auth.getUser().then(({ data }) => {
       setUser(data.user);
@@ -41,7 +40,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
             {/* TOP BAR */}
             <div className="flex justify-end items-center text-xs md:text-sm text-gray-700 gap-4">
-              <span className="font-semibold tracking-wide">1-888-000-0000</span>
+              <a
+            href="tel:+16476933330"
+            className="font-semibold tracking-wide hover:text-teal-600 transition"
+            >
+            (647) 693-3330
+            </a>
 
               <span className="text-gray-300">|</span>
 
@@ -108,7 +112,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                   Project Funding
                 </Link>
 
-                {/* AUTH BUTTON */}
                 {user ? (
                   <button
                     onClick={handleLogout}
@@ -122,7 +125,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                   </Link>
                 )}
 
-                {/* CONTACT */}
                 <button
                   onClick={() => router.push("/contact")}
                   className="text-gray-700 hover:text-teal-600"
@@ -154,7 +156,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 <Link href="/business-funding" onClick={() => setMenuOpen(false)}>Business Capital</Link>
                 <Link href="/project-funding" onClick={() => setMenuOpen(false)}>Project Funding</Link>
 
-                {/* AUTH BUTTON MOBILE */}
                 {user ? (
                   <button
                     onClick={() => {
@@ -170,7 +171,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                   </Link>
                 )}
 
-                {/* CONTACT */}
                 <button
                   onClick={() => {
                     router.push("/contact");
@@ -191,15 +191,38 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           {children}
         </main>
 
-        {/* FOOTER */}
-        <footer className="mt-12 border-t pt-6">
-          <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+        {/* FOOTER (UPGRADED) */}
+        <footer className="mt-20 border-t pt-10 pb-12 text-center text-sm text-gray-600">
+          <div className="max-w-4xl mx-auto px-4 space-y-3">
 
-            <p className="text-sm text-gray-500">
-              © {new Date().getFullYear()} McCowan, Jeffrey & Fich Structured Finance
-            </p>
+            <div className="font-semibold text-gray-900">
+              MJF Capital
+            </div>
 
-            <div className="flex gap-4 text-sm text-gray-500">
+            <div>
+              Structured Finance Solutions
+            </div>
+
+            <div className="pt-2">
+              First Canadian Place<br />
+              100 King St W #5600<br />
+              Toronto, ON M5X 1C9<br />
+              Canada
+            </div>
+
+             <div className="pt-2 font-medium">
+             Tel:{" "}
+             <a
+             href="tel:+16476933330"
+             className="hover:text-teal-600 transition"
+             >
+            (647) 693-3330
+            </a>
+            </div>
+              
+            
+
+            <div className="pt-4 flex justify-center gap-4">
               <Link href="/privacy" className="hover:text-black transition">
                 Privacy Policy
               </Link>
@@ -208,7 +231,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               </Link>
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex justify-center gap-4 pt-2">
               <FaFacebook size={16} className="hover:text-teal-600 cursor-pointer transition" />
               <FaTwitter size={16} className="hover:text-teal-600 cursor-pointer transition" />
               <FaLinkedin size={16} className="hover:text-teal-600 cursor-pointer transition" />
