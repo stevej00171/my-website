@@ -42,11 +42,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             {/* TOP BAR */}
             <div className="flex justify-end items-center text-xs md:text-sm text-gray-700 gap-4">
               <a
-            href="tel:+16476933330"
-            className="font-semibold tracking-wide hover:text-teal-600 transition"
-            >
-            (647) 693-3330
-            </a>
+                href="tel:+16476933330"
+                className="font-semibold tracking-wide hover:text-teal-600 transition"
+              >
+                (647) 693-3330
+              </a>
 
               <span className="text-gray-300">|</span>
 
@@ -211,17 +211,15 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               Canada
             </div>
 
-             <div className="pt-2 font-medium">
-             Tel:{" "}
-             <a
-             href="tel:+16476933330"
-             className="hover:text-teal-600 transition"
-             >
-            (647) 693-3330
-            </a>
+            <div className="pt-2 font-medium">
+              Tel:{" "}
+              <a
+                href="tel:+16476933330"
+                className="hover:text-teal-600 transition"
+              >
+                (647) 693-3330
+              </a>
             </div>
-              
-            
 
             <div className="pt-4 flex justify-center gap-4">
               <Link href="/privacy" className="hover:text-black transition">
@@ -242,17 +240,22 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </footer>
 
         {/* CALL BUTTON (mobile only) */}
-<a
-  href="tel:+16476933330"
-  className="fixed bottom-6 left-6 z-50 bg-black text-white px-6 py-3 rounded-md shadow-lg hover:bg-gray-800 transition text-sm font-medium md:hidden"
->
-  📞 Call Now
-</a>
+        <a
+          href="tel:+16476933330"
+          className="fixed bottom-6 left-6 z-50 bg-black text-white px-6 py-3 rounded-md shadow-lg hover:bg-gray-800 transition text-sm font-medium md:hidden"
+        >
+          📞 Call Now
+        </a>
 
-{/* APPLY BUTTON */}
-<Link
-  href="/apply"
-  className="fixed bottom-6 right-6 z-50 bg-black text-white px-6 py-3 rounded-md shadow-lg hover:bg-gray-800 transition text-sm font-medium"
->
-  Apply Now
-</Link>
+        {/* APPLY BUTTON */}
+        <Link
+          href="/apply"
+          className="fixed bottom-6 right-6 z-50 bg-black text-white px-6 py-3 rounded-md shadow-lg hover:bg-gray-800 transition text-sm font-medium"
+        >
+          Apply Now
+        </Link>
+
+      </body>
+    </html>
+  );
+}
