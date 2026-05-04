@@ -33,7 +33,7 @@ export default function ContactPage() {
 
         {/* CONTACT INFO */}
         <div className="space-y-2 text-gray-700">
-          <p><strong>Phone:</strong> 1-888-000-0000</p>
+          <p><strong>Phone:</strong> 1-647-693-33300</p>
           <p><strong>Email:</strong> info@mjf-finance.com</p>
           <p><strong>Hours:</strong> Monday – Friday, 9AM – 5PM</p>
         </div>
