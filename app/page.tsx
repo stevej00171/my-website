@@ -1,14 +1,20 @@
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white text-gray-900">
+    <main
+      className="min-h-screen bg-cover bg-center text-gray-900"
+      style={{
+        backgroundImage: "url('/finance-bg.jpg')", // Applying the background image
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
 
       {/* HERO */}
-      <section className="py-24 text-center">
-
+      <section className="py-24 text-center bg-white/80 backdrop-blur-sm">
         <img
-        src="/logo-mjf.svg"
-        alt="MJF Capital"
-        className="mx-auto mb-4 h-12"
+          src="/logo-mjf.svg"
+          alt="MJF Capital"
+          className="mx-auto mb-4 h-12"
         />
 
         <h1 className="text-4xl font-bold mb-4">
